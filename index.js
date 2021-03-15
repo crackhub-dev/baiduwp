@@ -810,11 +810,15 @@ const generate = async request => {
     })
     const body = await res1.text()
     var re = /yunData.setData\(({.+)\);/
+    var re2 = /locals.mset\(({.+)\);/
     if(body.match(re)){
       const json2 = JSON.parse(body.match(re)[1])
       return json2
     }
-    else {
+    else if(body.match(re2)){
+      const json2 = JSON.parse(body.match(re2)[1])
+      return json2
+    }else{
       return 1
     }
   }
@@ -846,10 +850,16 @@ const generate = async request => {
   const json2 = await getSign(surl_1,randsk)
   let filecontent = ``
   if(json2 != 1){
-    const sign = json2.sign
-    const timestamp = json2.timestamp
+    const fetchSign = await fetch('https://pan.baidu.com/share/tplconfig?surl=1'+surl_1+'&fields=sign,timestamp&channel=chunlei&web=1&app_id=250528&clienttype=0',{
+    headers:{        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36',
+        'Cookie':'BDUSS=' + BDUSS + '; '
+            +  'STOKEN=' + STOKEN + '; BDCLND=' + randsk}
+    })
+    const signjson = JSON.parse(await fetchSign.text())
+    const sign = signjson.data.sign
+    const timestamp = signjson.data.timestamp
     const shareid = json2.shareid
-    const uk = json2.uk 
+    const uk = (json2.visitor_uk == undefined)? json2.share_uk : json2.uk 
     const filejson = await getFileList(shareid,uk,randsk,dir)
     if (filejson.errno) {
       return new Response(error + `
