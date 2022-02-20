@@ -7,14 +7,11 @@ const AUTH_USER = '' //**INPUT BASIC AUTH USERNAME (optional)**
 const AUTH_PASS = '' //**INPUT BASIC AUTH SUPER SECRET PASSWORD (optional)**
 
 const pwdBody = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -33,7 +30,7 @@ const pwdBody = `<!DOCTYPE html>
   }
 </style>
 <meta name="referrer" content="never">
-<title>请输入提取码</title>
+<title>Baidu Bypass</title>
 <style>
     .alert {
 	  background-color: #FFFFFF;
@@ -49,14 +46,14 @@ const pwdBody = `<!DOCTYPE html>
  <script>
 $(function(){
 	Swal.fire({
-	title: '请输入提取码',
+	title: 'Please enter the password',
 	input: 'text',
 	inputAttributes: {
 	autocapitalize: 'off'
 	},
 	allowOutsideClick: false,
 	showCancelButton: false,
-	confirmButtonText: '提取文件',
+	confirmButtonText: 'Extracting Files',
 	preConfirm: (pwd) => {
   const url = document.URL
   let surl
@@ -79,7 +76,7 @@ $(function(){
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -87,10 +84,10 @@ $(function(){
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">	
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -100,14 +97,10 @@ $(function(){
 </html>`
 
 const rapidhtml = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -125,7 +118,7 @@ position: relative;
 top: -3px;
 }
 </style>
-<title>PanDownload网页版</title>
+<title>Baidu Bypass</title>
 <style>
 .form-inline input {
 width: 500px;
@@ -292,12 +285,12 @@ height: 3em;
         file.push(fileinfo);
       }
       else{
-        Swal.fire('未检测到有效链接');
+        Swal.fire('No valid link detected.');
         return false;
       }
     }
     let filelist = \`<ol class="breadcrumb my-4">
-文件列表&nbsp;&nbsp;<a href="">返回</a> </ol>
+File List&nbsp;&nbsp;<a href="">Return</a> </ol>
 <div>
 <ul class="list-group ">\`
     function addFile(file){
@@ -331,7 +324,7 @@ height: 3em;
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -339,10 +332,10 @@ height: 3em;
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -351,14 +344,14 @@ height: 3em;
 <div class="container">
 <div class="col-lg-6 col-md-9 mx-auto mb-5 input-card">
 <div class="card">
-<div class="card-header bg-dark text-light">秒传链接在线解析</div>
+<div class="card-header bg-dark text-light">Batch Link Parsing</div>
 <div class="card-body">
 <form name="form1" method="post" action="./rapiddl">
 <div class="form-group my-2">
-<textarea type="text" class="form-control" id="links" name="surl" placeholder="秒传链接（支持批量解析，每行一条链接）">
+<textarea type="text" class="form-control" id="links" name="surl" placeholder="pan.baidu links. Each link seperated by new line.">
 </textarea>
 </div>
-<button type="button" onclick="genFile()" class="mt-4 mb-3 form-control btn btn-success btn-block">打开</button>
+<button type="button" onclick="genFile()" class="mt-4 mb-3 form-control btn btn-success btn-block">Open</button>
 </form>
 </div>
 </div>
@@ -369,14 +362,11 @@ height: 3em;
 
 const error = `
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -394,7 +384,7 @@ const error = `
   }
 </style>
 <meta name="referrer" content="never">
-<title>提示</title>
+<title>Help</title>
 <style>
     .alert {
       position: relative;
@@ -410,7 +400,7 @@ const error = `
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -418,10 +408,10 @@ const error = `
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -432,14 +422,10 @@ const error = `
 <div class="col-md-7 col-sm-8 col-11">`
 
 const previewHeader = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -461,7 +447,7 @@ const previewHeader = `<!DOCTYPE html>
   }
 </style>
 <meta name="referrer" content="never">
-<title>视频预览</title>
+<title>Video Preview</title>
 <style>
     .alert {
       position: relative;
@@ -488,7 +474,7 @@ const previewFooter = `</script>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -496,10 +482,10 @@ const previewFooter = `</script>
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">	
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -509,9 +495,9 @@ const previewFooter = `</script>
 <div class="row justify-content-center">
 <div class="col-md-7 col-sm-8 col-11">
 <div class="alert alert-primary" role="alert">
-<h5 class="alert-heading">视频预览 with ❤ DPlayer</h5>
+<h5 class="alert-heading">Video Player by DPlayer</h5>
 <hr>
-<p class="card-text"><a href="./help">如无法播放请按照教程修改UA</a><br><div id="dplayer"></div></p>
+<p class="card-text"><a href="./help">If you can't view it. Follow the help section to change your User-Agent.</a><br><div id="dplayer"></div></p>
 </div>
 </div>
 </div>
@@ -520,14 +506,11 @@ const previewFooter = `</script>
 </html>`
 
 const filebody = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -546,7 +529,7 @@ const filebody = `<!DOCTYPE html>
 </style>
 <meta name="referrer" content="never">
 <link href="https://cdn.staticfile.org/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
-<title>文件列表</title>
+<title>File List</title>
 <script>
   function dl(fs_id, timestamp, sign, randsk, share_id, uk) {
     var form = $('<form method="post" action="/download" target="_blank"></form>');
@@ -561,13 +544,13 @@ const filebody = `<!DOCTYPE html>
   }
   function video(fs_id, timestamp, sign, randsk, share_id, uk, filetype){
     Swal.fire({
-      title: '请选择',
+      title: 'Please choose',
       icon: 'info',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: '下载',
-      cancelButtonText: '预览'
+      confirmButtonText: 'Download',
+      cancelButtonText: 'Preview'
     }).then((result) => {
       if (result.value) {
         dl(fs_id, timestamp, sign, randsk, share_id, uk);
@@ -667,7 +650,7 @@ const filebody = `<!DOCTYPE html>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -675,10 +658,10 @@ const filebody = `<!DOCTYPE html>
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -686,7 +669,7 @@ const filebody = `<!DOCTYPE html>
 </nav>
 <div class="container">
 <ol class="breadcrumb my-4">
-文件列表 </ol>
+File List </ol>
 <div>
 <ul class="list-group ">`
 
@@ -715,7 +698,7 @@ const parseLink = async request => {
     else{
       return new Response(error + `
       <div class="alert alert-danger" role="alert">
-<h5 class="alert-heading">提示</h5>
+<h5 class="alert-heading">Help</h5>
 <hr>
 <p class="card-text">CheckPwd Failed</p>
 </div>` + error_div,{ headers: { 'Content-Type': 'text/html;charset=UTF-8' } })
@@ -738,7 +721,7 @@ const parseLink = async request => {
     else{
       return new Response(error + `
       <div class="alert alert-danger" role="alert">
-<h5 class="alert-heading">提示</h5>
+<h5 class="alert-heading">Help</h5>
 <hr>
 <p class="card-text">CheckPwd Failed</p>
 </div>` + error_div,{ headers: { 'Content-Type': 'text/html;charset=UTF-8' } })
@@ -864,9 +847,9 @@ const generate = async request => {
     if (filejson.errno) {
       return new Response(error + `
           <div class="alert alert-danger" role="alert">
-      <h5 class="alert-heading">提示</h5>
+      <h5 class="alert-heading">Help</h5>
       <hr>
-      <p class="card-text">${filejson.show_msg || '提取码错误或文件失效'}</p>
+      <p class="card-text">${filejson.show_msg || 'Incorrect passsword or file'}</p>
       </div>` + error_div, { headers })
     }
     if (dir) {
@@ -905,9 +888,9 @@ filecontent += `<li class="list-group-item border-muted rounded text-muted py-2"
   else{
     return new Response(error + `
       <div class="alert alert-danger" role="alert">
-<h5 class="alert-heading">提示</h5>
+<h5 class="alert-heading">Help</h5>
 <hr>
-<p class="card-text">提取码错误或文件失效</p>
+<p class="card-text">Incorrect passsword or file</p>
 </div>` + error_div, { headers })
     
   }
@@ -915,14 +898,11 @@ filecontent += `<li class="list-group-item border-muted rounded text-muted py-2"
 }
 const landing = `
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -939,7 +919,7 @@ position: relative;
 top: -3px;
 }
 </style>
-<title>PanDownload网页版</title>
+<title>Baidu Bypass</title>
 <style>
 .form-inline input {
 width: 500px;
@@ -999,7 +979,7 @@ return true;
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -1007,10 +987,10 @@ return true;
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -1019,19 +999,19 @@ return true;
 <div class="container">
 <div class="col-lg-6 col-md-9 mx-auto mb-5 input-card">
 <div class="card">
-<div class="card-header bg-dark text-light">分享链接在线解析</div>
+<div class="card-header bg-dark text-light">Baidu Bypass</div>
 <div class="card-body">
 <form name="form1" method="post" action="./" onsubmit="return validateForm()">
 <div class="form-group my-2">
-<input type="text" class="form-control" name="surl" placeholder="分享链接">
+<input type="text" class="form-control" name="surl" placeholder="pan.baidu link">
 </div>
 <div class="form-group my-4">
-<input type="text" class="form-control" name="pwd" placeholder="提取码">
+<input type="text" class="form-control" name="pwd" placeholder="Password">
 </div>
-<button type="submit" class="mt-4 mb-3 form-control btn btn-success btn-block">打开</button>
+<button type="submit" class="mt-4 mb-3 form-control btn btn-success btn-block">Open</button>
 </form>
 <div class="text-center">
-<a href="./rapid">秒传链接解析 (Beta)</a>
+<a href="./rapid">Batch Parsing (Beta)</a>
 </div>
 </div>
 </div>
@@ -1041,14 +1021,11 @@ return true;
 </html>
 `
 const helpbody = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -1066,7 +1043,7 @@ const helpbody = `<!DOCTYPE html>
   }
 </style>
 <meta name="referrer" content="never">
-<title>下载链接使用方法</title>
+<title>Help</title>
 <style>
     .alert {
       position: relative;
@@ -1082,7 +1059,7 @@ const helpbody = `<!DOCTYPE html>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -1090,10 +1067,10 @@ const helpbody = `<!DOCTYPE html>
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -1105,51 +1082,22 @@ const helpbody = `<!DOCTYPE html>
 
 const helptext = `
 <div class="alert alert-primary" role="alert">
-<h5 class="alert-heading">提示</h5>
+<h5 class="alert-heading">Help</h5>
 <hr>
-<p class="card-text">因百度限制，需修改浏览器UA后下载。<br>
+<p class="card-text">Due to Baidu restrictions, you need to change your user agent in order to download<br>
 <div class="page-inner">
 <section class="normal" id="section-">
-<h4>Motrix（PC推荐）</h4>
+<h4>Motrix</h4>
 <ol>
-<li>启动 Motrix</li>
-<li>下载页面 推送到aria2 –&gt; 地址填入 http://127.0.0.1:16800/jsonrpc –&gt; 点击 Send</li>
-</ol>
-<h4>ADM Pro（Android推荐）</h4>
-<ol>
-<li>设置 –&gt; 下载中 –&gt; 浏览器标识 –&gt; 自定义 浏览器标识</li>
-<li>填入： netdisk;11.4.5.14</li>
-<li>切换到浏览器，长按“下载链接”，选择复制链接地址</li>
-<li>在ADM中添加任务并开始</li>
+<li>Start Motrix</li>
+<li>Paste the download link into motrix</li>
+<li>Click on "Advanced Options"</li>
+<li>Put "netdisk;11.4.5.14" into the "User-Agent" field and start the download.</li>
 </ol>
 <h4>IDM</h4>
 <ol>
-<li>选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入 <b>netdisk;11.4.5.14</b></li>
-<li>右键复制下载链接，在 IDM 新建任务，粘贴链接即可下载。</li>
-</ol>
-<h4>Chrome浏览器</h4>
-<ol>
-<li>安装浏览器扩展程序 <a href="https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg" target="_blank">User-Agent Switcher for Chrome</a></li>
-<li>右键点击扩展图标 -> 选项</li>
-<li>New User-agent name 填入 百度网盘分享下载</li>
-<li>New User-Agent String 填入 netdisk;11.4.5.14</li>
-<li>Group 填入 百度网盘</li>
-<li>Append? 选择 Replace</li>
-<li>Indicator Flag 填入 Log，点击 Add 保存</li>
-<li>保存后点击扩展图标，出现"百度网盘"，进入并选择"百度网盘分享下载"。</li>
-</ol>
-<blockquote>
-<p>Chrome应用商店打不开或者其他Chromium内核的浏览器，<a href="http://pandownload.com/static/user_agent_switcher_1_0_43_0.crx" target="_blank">请点此下载</a></p>
-<p><a href="https://appcenter.browser.qq.com/search/detail?key=User-Agent%20Switcher%20for%20Chrome&amp;id=djflhoibgkdhkhhcedjiklpkjnoahfmg%20&amp;title=User-Agent%20Switcher%20for%20Chrome" target="_blank">QQ浏览器插件下载</a></p>
-</blockquote>
-<h4>Pure浏览器（Android）</h4>
-<ol>
-<li>设置 –&gt; 浏览设置 -&gt; 浏览器标识(UA)</li>
-<li>添加自定义UA：netdisk;11.4.5.14</li>
-</ol>
-<h4>Alook浏览器（IOS）</h4>
-<ol>
-<li>设置 -&gt; 通用设置 -&gt; 浏览器标识 -&gt; 移动版浏览器标识 -&gt; 自定义 -><br> 填入 <b>netdisk;11.4.5.14</b></li>
+<li>Open IDM</li>
+<li>Go into Options -> Downloads -> Change "User-Agent for manually added downloads" to "<b>netdisk;11.4.5.14</b>"</li>
 </ol>
 </section>
 </div>
@@ -1158,14 +1106,10 @@ const helptext = `
 `
 
 const dbody = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Ling Macker"/>
-<meta name="description" content="PanDownload网页版,百度网盘分享链接在线解析工具"/>
-<meta name="keywords" content="PanDownload,百度网盘,分享链接,下载,不限速"/>
 <link rel="icon" href="https://pandownload.com/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -1297,7 +1241,7 @@ if(await getVer != null)
   }
 </style>
 <meta name="referrer" content="never">
-<title>提示</title>
+<title>Help</title>
 <style>
     .alert {
       position: relative;
@@ -1313,7 +1257,7 @@ if(await getVer != null)
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class="container">
 <a class="navbar-brand" href="${INDEX_URL}">
-<img src="https://pandownload.com/img/baiduwp/logo.png" class="img-fluid rounded logo-img mr-2" alt="LOGO">PanDownload
+PanDownload
 </a>
 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collpase-bar">
 <span class="navbar-toggler-icon"></span>
@@ -1321,10 +1265,10 @@ if(await getVer != null)
 <div class="collapse navbar-collapse" id="collpase-bar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="${INDEX_URL}">主页</a>
+<a class="nav-link" href="${INDEX_URL}">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="https://github.com/TkzcM/baiduwp" target="_blank">GitHub</a>
+<a class="nav-link" href="/help" target="_blank">Help</a>
 </li>
 </ul>
 </div>
@@ -1377,8 +1321,8 @@ const dlRapid = async request => {
   let dresult
   const header = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36',
-    'Cookie':'BDUSS=' + SVIPBDUSS + '; '
-    +  'STOKEN=' + SVIPSTOKEN + ';'
+    'Cookie':'BDUSS=' + BDUSS + '; '
+    +  'STOKEN=' + STOKEN + ';'
   }
   const getbdstoken = await fetch('http://pan.baidu.com/api/gettemplatevariable?fields=[%22bdstoken%22]',{
     headers:header
@@ -1390,9 +1334,9 @@ const dlRapid = async request => {
   }
   catch{
     dresult = `<div class="alert alert-danger" role="alert">
-    <h5 class="alert-heading">获取下载链接失败</h5>
+    <h5 class="alert-heading">Failed to get download link</h5>
     <hr>
-    <p class="card-text">Get bdstoken Failed</p>
+    <p class="card-text">Failed to get bdstoken</p>
     </div>`
     return new Response(dbody+dresult+dfooter,{headers:{'Content-Type':'text/html;charset=UTF-8'}})
   }
@@ -1414,7 +1358,7 @@ const dlRapid = async request => {
     const getRealLink = await fetch('http://d.pcs.baidu.com/rest/2.0/pcs/file?method=locatedownload&app_id=250528&path='+encodeURIComponent(path),{
       headers:{
         'user-agent': 'netdisk;11.4.5.14',
-        'Cookie': 'BDUSS=' + SVIPBDUSS + ';'
+        'Cookie': 'BDUSS=' + BDUSS + ';'
       },
       method: 'GET'
     })
@@ -1430,40 +1374,40 @@ const dlRapid = async request => {
         if(getTrueLink.status == 302){
         const trueLink = getTrueLink.headers.get('Location').substring(7)
     dresult = `<div class="alert alert-primary" role="alert">
-      <h5 class="alert-heading" id="alert">获取下载链接成功</h5>
+      <h5 class="alert-heading" id="alert">Successfully generated download link</h5>
       <hr>
-      文件名：<b id="filename">${filename}</b>
-      <p class="card-text" id="text">推荐使用aria2c/Motrix<br>
-      <a id="http" href="https://`+trueLink+`" target=_blank>下载链接(推荐)</a>
-      <a id="https" href="https://`+realLink+`" target=_blank>下载链接(备用)</a>
+      Filename: <b id="filename">${filename}</b>
+      <p class="card-text" id="text">aria2c/Motrix<br>
+      <a id="http" href="https://`+trueLink+`" target=_blank>HTTP Download Link</a>
+      <a id="https" href="https://`+realLink+`" target=_blank>HTTPS Download Link</a>
       <br><br>
-      <a href=javascript:void(0) id="aria2" data-toggle="modal" data-target="#exampleModal">推送到Aria2</a>
+      <a href=javascript:void(0) id="aria2" data-toggle="modal" data-target="#exampleModal">Send to Aria2</a>
       <br><br>
-      <a href="./help" id="help">下载链接使用方法（必读）</a></p>
+      <a href="./help" id="help">Help</a></p>
       </div>`
     }
     else{
       dresult = `<div class="alert alert-danger" role="alert">
-      <h5 class="alert-heading">获取下载链接失败</h5>
+      <h5 class="alert-heading">Failed to get download link</h5>
       <hr>
-      <p class="card-text">Get Real link Failed</p>
+      <p class="card-text">Failed to get Real Link</p>
       </div>`
     }
   }
     else{
       dresult = `<div class="alert alert-danger" role="alert">
-      <h5 class="alert-heading">获取下载链接失败</h5>
+      <h5 class="alert-heading">Failed to get download link</h5>
       <hr>
-      <p class="card-text">Get Direct Link Failed</p>
+      <p class="card-text">Failed to generate direct link</p>
       </div>`
     }
     return new Response(dbody+dresult+dfooter, { headers: {'Content-Type': 'text/html;charset=UTF-8'} })
   }
   else {
     dresult = `<div class="alert alert-danger" role="alert">
-    <h5 class="alert-heading">获取下载链接失败</h5>
+    <h5 class="alert-heading">Failed to get download link</h5>
     <hr>
-    <p class="card-text">Save File Failed</p>
+    <p class="card-text">Failed to Save File</p>
     </div>`
     return new Response(dbody+dresult+dfooter,{headers:{'Content-Type':'text/html;charset=UTF-8'}})
   }
@@ -1507,7 +1451,7 @@ const getVideo = async request => {
   const getRealLink = await fetch(dlink,{
     headers:{
       'user-agent': ua,
-      'Cookie': 'BDUSS=' + SVIPBDUSS + ';'
+      'Cookie': 'BDUSS=' + BDUSS + ';'
     },
     redirect:"manual"
   })
@@ -1587,7 +1531,7 @@ const download = async request => {
   const getRealLink = await fetch(dlink,{
     headers:{
       'user-agent': 'netdisk;11.4.5.14',
-      'Cookie': 'BDUSS=' + SVIPBDUSS + ';'
+      'Cookie': 'BDUSS=' + BDUSS + ';'
     },
     redirect:"manual"
   })
@@ -1595,30 +1539,30 @@ const download = async request => {
   if(dldata.error_code == 302){
   const realLink = getRealLink.headers.get('Location').substring(7)
   dresult = `<div class="alert alert-primary" role="alert">
-    <h5 class="alert-heading">获取下载链接成功</h5>
+    <h5 class="alert-heading">Successfully generated download link</h5>
     <hr>
-    文件名：<b id="filename">${filename}</b>
-    <p class="card-text"><a id="http" href="http://`+realLink+`" target=_blank>下载链接(http)</a>
-    <a id="https" href="https://`+realLink+`" target=_blank>下载链接(https)</a>
+    Filename: <b id="filename">${filename}</b>
+    <p class="card-text"><a id="http" href="http://`+realLink+`" target=_blank>HTTP Download Link</a>
+    <a id="https" href="https://`+realLink+`" target=_blank>HTTPS Download Link</a>
     <br><br>
-    <a href=javascript:void(0) data-toggle="modal" data-target="#exampleModal">推送到Aria2</a>
+    <a href=javascript:void(0) data-toggle="modal" data-target="#exampleModal">Send to Aria2</a>
     <br><br>
-    <a href="./help">下载链接使用方法（必读）</a></p>
+    <a href="./help">Help</a></p>
     </div>`
   }
   else{
     dresult = `<div class="alert alert-danger" role="alert">
-    <h5 class="alert-heading">获取下载链接失败</h5>
+    <h5 class="alert-heading">Failed to get download link</h5>
     <hr>
-    <p class="card-text">未知错误</p>
+    <p class="card-text">Unknown Error</p>
     </div>`
   }
   }
   else{
       dresult = `<div class="alert alert-danger" role="alert">
-    <h5 class="alert-heading">获取下载链接失败</h5>
+    <h5 class="alert-heading">Failed to get download link</h5>
     <hr>
-    <p class="card-text">未知错误</p>
+    <p class="card-text">Unknown Error</p>
     </div>`
   }
 
